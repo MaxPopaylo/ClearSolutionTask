@@ -1,5 +1,9 @@
+
 plugins {
     id("java")
+    id("org.springframework.boot") version "3.2.5"
+    id("io.spring.dependency-management") version "1.1.4"
+    application
 }
 
 group = "app"
@@ -14,6 +18,10 @@ repositories {
 }
 
 dependencies {
+
+    //MODULES
+    implementation(project(path = ":domain"))
+    implementation(project(path = ":application"))
 
     //MAPSTRUCT DEPENDENCIES
     implementation("org.mapstruct:mapstruct:${Versions.MAPSTRUCT_VER}")
@@ -35,9 +43,16 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
     runtimeOnly("org.postgresql:r2dbc-postgresql")
 
+    //LOMBOK DEPENDENCIES
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+
+    //WEBFLUX DEPENDENCIES
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
 
 }
 
 tasks.test {
     useJUnitPlatform()
 }
+
