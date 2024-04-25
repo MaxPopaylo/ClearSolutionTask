@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: ClearSolutionTask
+
+  profiles:
+    include:
+     - adapters
+     - app
+     - domain
+
+server:
+  port: 8888

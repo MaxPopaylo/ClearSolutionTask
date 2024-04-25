@@ -1,0 +1,16 @@
+spring:
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5445/users_db
+    username: postgres
+    password: root
+
+  flyway:
+    url: jdbc:postgresql://localhost:5445/users_db
+    user: postgres
+    password: root
+
