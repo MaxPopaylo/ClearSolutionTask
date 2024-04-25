@@ -27,6 +27,9 @@ dependencies {
     //REST DEPENDENCIES
     implementation("org.springframework.boot:spring-boot-starter-web")
 
+    //WEBFLUX DEPENDENCIES
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+
     //DATABASE DEPENDENCIES
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
@@ -34,6 +37,7 @@ dependencies {
     implementation("org.flywaydb:flyway-core")
     runtimeOnly("org.postgresql:postgresql")
     runtimeOnly("org.postgresql:r2dbc-postgresql")
+
 
 }
 

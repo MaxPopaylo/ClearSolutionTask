@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 plugins {
 	java
 	id("org.springframework.boot") version "3.2.5"
@@ -22,9 +24,6 @@ dependencies {
 	implementation(project(path = ":application"))
 	implementation(project(path = ":domain"))
 
-	//WEBFLUX DEPENDENCIES
-	implementation("org.springframework.boot:spring-boot-starter-webflux")
-
 	//LOMBOK DEPENDENCIES
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
@@ -33,6 +32,13 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
+}
+
+tasks.withType<BootJar> {
+	enabled = false
+}
+tasks.withType<Jar> {
+	enabled = true
 }
 
 tasks.withType<Test> {
