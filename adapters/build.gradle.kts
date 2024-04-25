@@ -27,9 +27,6 @@ dependencies {
     //REST DEPENDENCIES
     implementation("org.springframework.boot:spring-boot-starter-web")
 
-    //WEBFLUX DEPENDENCIES
-    implementation("org.springframework.boot:spring-boot-starter-webflux")
-
     //DATABASE DEPENDENCIES
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")

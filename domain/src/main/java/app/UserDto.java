@@ -1,7 +1,10 @@
 package app;
 
+import lombok.Data;
+
 import java.time.LocalDate;
 
+@Data
 public class UserDto {
 
     private String email;
