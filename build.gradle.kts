@@ -29,8 +29,10 @@ dependencies {
 	implementation(project(path = ":application"))
 	implementation(project(path = ":domain"))
 
-	//JUNIT TESTING DEPENDENCIES
+	//DEPLOY DEPENDENCIES
 	implementation("org.springframework.boot:spring-boot-starter")
+
+	//JUNIT TESTING DEPENDENCIES
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
 	testImplementation(platform("org.junit:junit-bom:5.10.0"))

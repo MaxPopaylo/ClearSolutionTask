@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "app")
 @EnableConfigurationProperties
 public class SolutionApplication {
 
