@@ -8,5 +8,4 @@ import java.time.LocalDate;
 
 public interface R2dbcUserRepository extends ReactiveCrudRepository<UserDbo, Integer> {
     Flux<UserDbo> findAllByBirthdayBetween(LocalDate from, LocalDate to);
-    Mono<UserDbo> findByEmail(String email);
 }
