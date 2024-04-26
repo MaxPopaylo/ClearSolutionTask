@@ -42,6 +42,7 @@ public class R2dbcUserRepositoryAdapter implements UserRepository {
     }
 
     @Override
+    @Transactional
     public Mono<Void> delete(User user) {
         return repository
                 .delete(UserDboMapper.mapper.toDbo(user));

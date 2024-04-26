@@ -14,3 +14,6 @@ spring:
     user: postgres
     password: root
 
+properties:
+  user:
+    min_age: 18

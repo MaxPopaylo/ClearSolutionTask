@@ -18,6 +18,9 @@ dependencies {
     //LOMBOK DEPENDENCIES
     implementation("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
+
+    //VALIDATION DEPENDENCIES
+    implementation("org.springframework.boot:spring-boot-starter-validation")
 }
 
 tasks.test {

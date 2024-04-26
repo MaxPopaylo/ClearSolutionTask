@@ -33,7 +33,6 @@ public class DefaultUserService implements UserService {
 
     @Override
     public Mono<User> save(UserDto dto) {
-        validation.userDtoValidation(dto);
         return repository
                 .save(mapper.toUser(dto));
     }
@@ -47,7 +46,6 @@ public class DefaultUserService implements UserService {
 
     @Override
     public Mono<User> update(int id, UserDto dto) {
-        validation.userDtoValidation(dto);
         return getById(id)
                 .flatMap(val -> {
 
@@ -56,7 +54,7 @@ public class DefaultUserService implements UserService {
                     val.setLast_name(StringUtils.defaultIfBlank(dto.getLast_name(), val.getLast_name()));
                     val.setBirthday(dto.getBirthday() != null ? dto.getBirthday() : val.getBirthday());
                     val.setAddress(StringUtils.defaultIfBlank(dto.getAddress(), val.getAddress()));
-                    val.setPhone(StringUtils.defaultIfBlank(dto.getPhone(), val.getPhone()));
+                    val.setPhone_number(StringUtils.defaultIfBlank(dto.getPhone_number(), val.getPhone_number()));
 
                     return repository.save(val);
                 });

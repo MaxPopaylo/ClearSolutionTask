@@ -14,20 +14,6 @@ public class UserExceptionHandlerAdapter implements UserExceptionHandler {
     @Override
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseError handle(EmailAlreadyUsedException e) {
-        return new ResponseError(e.getMessage());
-    }
-
-    @Override
-    @ExceptionHandler
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseError handle(EmailWrongException e) {
-        return new ResponseError(e.getMessage());
-    }
-
-    @Override
-    @ExceptionHandler
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseError handle(InvalidDateException e) {
         return new ResponseError(e.getMessage());
     }

@@ -2,17 +2,18 @@ package app.out.r2dbc;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
-@Table(name = "books")
+@Table(name = "users")
 public class UserDbo {
 
     @Id
@@ -24,6 +25,6 @@ public class UserDbo {
     private String last_name;
     private LocalDate birthday;
     private String address;
-    private String phone;
+    private String phone_number;
 
 }

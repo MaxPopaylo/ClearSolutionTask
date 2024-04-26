@@ -1,4 +1,4 @@
-package app;
+package app.out.validation;
 
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -9,7 +9,7 @@ public class BindingResultParser {
         StringBuilder errorMsg = new StringBuilder();
         for (FieldError error : bindingResult.getFieldErrors()){
             errorMsg.append(error.getDefaultMessage())
-                    .append(";").append("\n");
+                    .append(";").append(" ");
         }
 
         return errorMsg.toString();

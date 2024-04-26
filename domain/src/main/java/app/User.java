@@ -12,6 +12,6 @@ public class User {
     private String last_name;
     private LocalDate birthday;
     private String address;
-    private String phone;
+    private String phone_number;
 
 }
