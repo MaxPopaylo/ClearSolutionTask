@@ -1,6 +1,7 @@
 package app.out.validation;
 
 import app.UserDto;
+import app.exceptions.BirthdayRangeException;
 import app.exceptions.InvalidDateException;
 import app.exceptions.UserYoungException;
 import app.exceptions.ValidationException;
@@ -51,6 +52,8 @@ class UserValidationHandlerAdapterTest {
     void checkBirthdayRangeValid() {
         LocalDate from = LocalDate.now().plusYears(1);
         LocalDate to = LocalDate.now().minusYears(1);
+
+        assertThrows(BirthdayRangeException.class, () -> adapter.checkBirthdayRangeValid(from, to));
     }
 
     @Test
