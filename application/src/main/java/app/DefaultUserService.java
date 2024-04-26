@@ -61,9 +61,9 @@ public class DefaultUserService implements UserService {
     }
 
     @Override
-    public Flux<User> getUsersByBirthdayRange(LocalDate from, LocalDate to) {
+    public Flux<User> getByBirthdayRange(LocalDate from, LocalDate to) {
         validation.checkBirthdayRangeValid(from, to);
-        return repository.findUsersFromBirthdayRange(from, to);
+        return repository.findByBirthdayRange(from, to);
     }
 
 }

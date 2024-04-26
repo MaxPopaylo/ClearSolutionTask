@@ -17,30 +17,32 @@ public class UserValidationHandlerAdapter implements UserValidationHandler {
 
     @Override
     public void checkAgeValid(LocalDate birthday) {
-        int age = LocalDate.now().getYear() - birthday.getYear();
-        if (age < min_age) {
-            throw new UserYoungException(min_age);
+        if (birthday != null) {
+            int age = LocalDate.now().getYear() - birthday.getYear();
+            if (age < min_age) {
+                throw new UserYoungException(min_age);
+            }
         }
     }
 
     @Override
     public void checkBirthDateValid(LocalDate birthDate) {
-        if (birthDate.isAfter(LocalDate.now())) {
+        if (birthDate != null && birthDate.isAfter(LocalDate.now())) {
             throw new InvalidDateException();
         }
     }
 
     @Override
     public void checkBirthdayRangeValid(LocalDate from, LocalDate to) {
-        if (from.isAfter(to)) {
+        if (from == null || to == null || from.isAfter(to)) {
             throw new BirthdayRangeException();
         }
     }
 
     @Override
     public void userDtoValidation(UserDto dto, BindingResult bindingResult) {
-        checkAgeValid(dto.getBirthday());
         checkBirthDateValid(dto.getBirthday());
+        checkAgeValid(dto.getBirthday());
 
         if (bindingResult.hasErrors()) {
             throw new ValidationException(BindingResultParser.parse(bindingResult));

@@ -12,6 +12,6 @@ public interface UserRepository {
     Mono<User> findById(int id);
     Mono<User> save(User user);
     Mono<Void> delete(User user);
-    Flux<User> findUsersFromBirthdayRange(LocalDate from, LocalDate to);
+    Flux<User> findByBirthdayRange(LocalDate from, LocalDate to);
 
 }

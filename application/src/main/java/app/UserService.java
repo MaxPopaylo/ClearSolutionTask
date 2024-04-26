@@ -12,6 +12,6 @@ public interface UserService {
     Mono<User> save(UserDto dto);
     Mono<Void> delete(int id);
     Mono<User> update(int id, UserDto dto);
-    Flux<User> getUsersByBirthdayRange(LocalDate from, LocalDate to);
+    Flux<User> getByBirthdayRange(LocalDate from, LocalDate to);
 
 }

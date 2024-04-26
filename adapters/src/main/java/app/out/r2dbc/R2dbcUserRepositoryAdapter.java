@@ -49,7 +49,7 @@ public class R2dbcUserRepositoryAdapter implements UserRepository {
     }
 
     @Override
-    public Flux<User> findUsersFromBirthdayRange(LocalDate from, LocalDate to) {
+    public Flux<User> findByBirthdayRange(LocalDate from, LocalDate to) {
         return repository
                 .findAllByBirthdayBetween(from, to)
                 .map(UserDboMapper.mapper::toEntity);
