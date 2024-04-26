@@ -29,13 +29,6 @@ dependencies {
 	implementation(project(path = ":application"))
 	implementation(project(path = ":domain"))
 
-	//WEBFLUX DEPENDENCIES
-	implementation("org.springframework.boot:spring-boot-starter-webflux")
-
-	//LOMBOK DEPENDENCIES
-	implementation("org.projectlombok:lombok")
-	annotationProcessor("org.projectlombok:lombok")
-
 	//JUNIT TESTING DEPENDENCIES
 	implementation("org.springframework.boot:spring-boot-starter")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

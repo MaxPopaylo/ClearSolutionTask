@@ -3,7 +3,6 @@ package app;
 import app.exceptions.UserNotFoundException;
 import app.ports.UserDtoMapper;
 import app.ports.UserRepository;
-import app.ports.UserValidationHandler;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
@@ -17,7 +16,6 @@ import java.time.LocalDate;
 public class DefaultUserService implements UserService {
 
     private final UserRepository repository;
-    private final UserValidationHandler validation;
     private final UserDtoMapper mapper;
 
     @Override
@@ -62,7 +60,6 @@ public class DefaultUserService implements UserService {
 
     @Override
     public Flux<User> getByBirthdayRange(LocalDate from, LocalDate to) {
-        validation.checkBirthdayRangeValid(from, to);
         return repository.findByBirthdayRange(from, to);
     }
 
