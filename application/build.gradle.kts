@@ -30,6 +30,13 @@ dependencies {
 
     //OTHER DEPENDENCIES
     implementation("org.apache.commons:commons-lang3:${Versions.LANG3_VER}")
+
+    //JUNIT TESTING DEPENDENCIES
+    implementation("org.springframework.boot:spring-boot-starter")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("io.projectreactor:reactor-test")
+    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
 tasks.test {
