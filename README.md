@@ -1,5 +1,13 @@
 # CLEAR SOLUTION TEST TASK
 
+## Brief description
+
+The project is written in Hexagonal Architecture in Multi-Module format, where each module is a separate layer in the architecture with its own dependencies.
+The project is fully reactive using Spring WebFlux, R2DBC, ReactorTests.
+The project implements FlywayMogration, as well as Docker-based containerization to run the application on any machine.
+The project implements JUnit tests using ReactorTests, as well as Integration tests using Testcontainers and SpringWeb.
+The project also uses the following technologies: PostgreSQL, Lombok, MapStruct, HibernateValidation, SpringWeb, etc.
+
 ## Startup Instructions
 
 ### Run Docker Compose
