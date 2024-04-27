@@ -1,3 +1,4 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
     id("java")
@@ -58,6 +59,9 @@ dependencies {
 
 }
 
+tasks.withType<BootJar> {
+    mainClass = "app.SolutionApplication"
+}
 tasks.test {
     useJUnitPlatform()
 }

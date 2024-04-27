@@ -1,15 +1,10 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
 	java
 	id("org.springframework.boot") version "3.2.5"
 	id("io.spring.dependency-management") version "1.1.4"
-	application
 }
-
-application {
-	mainClass = "solution.SolutionApplication"
-}
-
 
 group = "app"
 version = "0.0.1-SNAPSHOT"
@@ -45,6 +40,10 @@ dependencies {
 
 
 
+}
+
+tasks.withType<BootJar> {
+	mainClass = "app.SolutionApplication"
 }
 
 tasks.withType<Test> {

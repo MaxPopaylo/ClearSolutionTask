@@ -1,3 +1,4 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
     id("java")
@@ -21,6 +22,10 @@ dependencies {
 
     //VALIDATION DEPENDENCIES
     implementation("org.springframework.boot:spring-boot-starter-validation")
+}
+
+tasks.withType<BootJar> {
+    mainClass = "app.SolutionApplication"
 }
 
 tasks.test {

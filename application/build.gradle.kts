@@ -1,3 +1,4 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
     id("java")
@@ -36,6 +37,10 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+}
+
+tasks.withType<BootJar> {
+    mainClass = "app.SolutionApplication"
 }
 
 tasks.test {
