@@ -5,7 +5,6 @@ import app.ports.UserDtoMapper;
 import app.ports.UserRepository;
 import org.junit.jupiter.api.*;
 import org.mockito.*;
-import org.springframework.boot.test.context.SpringBootTest;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;

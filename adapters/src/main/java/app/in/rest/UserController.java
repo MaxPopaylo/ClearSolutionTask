@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDate;
+
 
 @RestController
 @RequiredArgsConstructor
@@ -29,9 +31,9 @@ public class UserController {
     }
 
     @GetMapping("/birthday/range")
-    public Flux<User> getByBirthdayRange(@RequestBody BirthRangeDto dto) {
-        validation.checkBirthdayRangeValid(dto.from(), dto.to());
-        return service.getByBirthdayRange(dto.from(), dto.to());
+    public Flux<User> getByBirthdayRange(@RequestParam LocalDate from, @RequestParam LocalDate to) {
+        validation.checkBirthdayRangeValid(from, to);
+        return service.getByBirthdayRange(from,to);
     }
 
     @PostMapping

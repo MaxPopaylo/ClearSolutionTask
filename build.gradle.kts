@@ -33,10 +33,16 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
 
 	//JUNIT TESTING DEPENDENCIES
+	testImplementation("org.springframework.boot:spring-boot-starter-web")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("io.projectreactor:reactor-test")
+	testImplementation("org.springframework.boot:spring-boot-testcontainers")
 	testImplementation(platform("org.junit:junit-bom:5.10.0"))
+	testImplementation("org.testcontainers:junit-jupiter")
 	testImplementation("org.junit.jupiter:junit-jupiter")
+	testImplementation("io.projectreactor:reactor-test")
+	testImplementation("org.testcontainers:postgresql")
+	testImplementation("org.testcontainers:r2dbc")
+
 
 
 }
