@@ -42,6 +42,22 @@ dependencies {
 
 }
 
+tasks.register<Test>("integrationTests") {
+	useJUnitPlatform {
+		excludeTags("unit")
+		includeTags("integration")
+	}
+	mustRunAfter("check")
+}
+
+tasks.register<Test>("unitTests") {
+	useJUnitPlatform {
+		includeTags("unit")
+		excludeTags("integration")
+	}
+	mustRunAfter("check")
+}
+
 tasks.withType<BootJar> {
 	mainClass = "app.SolutionApplication"
 }
