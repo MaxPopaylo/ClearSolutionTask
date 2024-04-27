@@ -21,7 +21,7 @@ docker-compose up --build -d
 
 Linux:
 ```bash
-sudo docker-compose up -d
+sudo docker-compose up --build -d
 ```
 
 ## Testing
